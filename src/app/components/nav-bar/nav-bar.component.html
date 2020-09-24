@@ -1,0 +1,59 @@
+
+<div class='main-nav navbar-inverse '>
+    <div class='navbar navbar-inverse'>
+        <div class='navbar-brand '>
+            <a class='navbar-brand-text' [routerLink]="['/home']">Vega</a>
+        </div>
+        <div class="ml-auto">
+            <button type='button' class='navbar-toggle ' data-toggle='collapse' data-target='.navbar-collapse'>
+                <!-- <span class='sr-only'>Toggle navigation</span> -->
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class='clearfix'></div>
+        <div class='navbar-collapse collapse' data-toggle="collapse" data-target=".navbar-collapse" >
+            <ul class='nav navbar-nav navbar-brand-text' >
+                <li>
+                    <a (click)="auth.login()" *ngIf="!auth.loggedIn">
+                        <span class='glyphicon glyphicon-user'></span> Login
+                    </a>
+                    <a (click)="auth.logout()"  *ngIf="auth.loggedIn">
+                        <span class='glyphicon glyphicon-user'></span> Logout
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/home']">
+                        <span class='glyphicon glyphicon-home'></span> Home
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/counter']">
+                        <span class='glyphicon glyphicon-education'></span> Counter
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/fetchdata']">
+                        <span class='glyphicon glyphicon-th-list'></span> Fetch data
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/vehicles/new']">
+                        <span class='glyphicon glyphicon-plus'></span> Vehicle Form
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a [routerLink]="['/vehicles']">
+                        <span class='glyphicon glyphicon-home'></span> Vehicles
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']" *ngIf="auth.roles.indexOf('Admin')>-1">
+                    <a [routerLink]="['/admin']">
+                        <span class='glyphicon glyphicon-home'></span> Admin
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

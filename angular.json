@@ -24,9 +24,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/ngx-toastr/toastr.css",
+              "./node_modules/font-awesome/css/font-awesome.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -115,6 +121,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angvega"
+    }
+  },
+  "defaultProject": "angvega",
+  "cli": {
+    "analytics": "781d0050-6eb9-4796-8ac5-53ae7f29dac0"
+  }
 }
